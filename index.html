@@ -1,0 +1,43 @@
+<script>
+
+    const computerResult = computerPlay();
+    const playerResult = prompt("what is your selection player : 'rock' 'paper' or 'scissors' you decide!").toLowerCase();
+    
+    function computerPlay(){
+        let x = Math.random()*3;
+        let y = Math.floor(x)
+        console.log (y);
+        
+        switch(y){
+            case 0:
+                return "rock";
+                break;
+            case 1:
+                return "paper";
+                break;
+            case 2:
+                return "scissors";
+                break;
+            
+        }
+    }
+
+    function runRound(computerResult = computerResult, playerResult){
+        console.log(`The computer chose ${computerResult} and player chose ${playerResult} !`);
+        (computerResult == playerResult) ? console.log("It is a draw!"):
+        (computerResult == "rock" && playerResult == "scissors")? console.log("Computer wins!"):
+        (computerResult == "paper" && playerResult == "rock")? console.log("Computer wins!"):
+        (computerResult == "scissors" && playerResult == "paper")? console.log("Computer wins!"):console.log("Player Wins!")
+
+    }
+    console.log(runRound(computerResult, playerResult));
+
+    /*function game(){
+        runRound();
+        runRound();
+        runRound();
+        runRound();
+        runRound();
+
+    }*/
+</script>
